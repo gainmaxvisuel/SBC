@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Afriquiz — Créer mon compte</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <link rel="stylesheet" href="inscription.css">
+</head>
+
+<body>
+
+  <main class="register-page">
+
+    <!-- PARTIE GAUCHE -->
+    <section class="register-intro">
+
+      <a href="index.html" class="logo-link">
+        <div class="logo">Afriquiz</div>
+      </a>
+
+      <div class="intro-content">
+        <span class="badge">🎯 Rejoins Afriquiz</span>
+
+        <h1>
+          Ton savoir peut
+          <span>faire la différence.</span>
+        </h1>
+
+        <p>
+          Crée ton compte gratuitement et participe aux quiz,
+          compétitions et défis Afriquiz.
+        </p>
+
+        <div class="advantages">
+
+          <div class="advantage">
+            <div class="adv-icon">⚡</div>
+            <div>
+              <strong>Inscription rapide</strong>
+              <p>Crée ton compte en quelques secondes.</p>
+            </div>
+          </div>
+
+          <div class="advantage">
+            <div class="adv-icon">🏆</div>
+            <div>
+              <strong>Participe aux compétitions</strong>
+              <p>Teste tes connaissances et améliore ton classement.</p>
+            </div>
+          </div>
+
+          <div class="advantage">
+            <div class="adv-icon">🌍</div>
+            <div>
+              <strong>Une communauté africaine</strong>
+              <p>Affronte des participants de plusieurs pays africains.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- PARTIE DROITE -->
+    <section class="register-form-section">
+
+      <div class="register-card">
+
+        <div class="form-header">
+          <h2>Créer mon compte</h2>
+          <p>
+            Déjà inscrit ?
+            <a href="connexion.html">Se connecter</a>
+          </p>
+        </div>
+
+
+        <!-- MESSAGE -->
+        <div id="message" class="message"></div>
+
+
+        <form id="registerForm">
+
+          <!-- PSEUDO -->
+          <div class="form-group">
+
+            <label for="username">
+              Pseudo
+            </label>
+
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Ex : SteveQuiz"
+                minlength="3"
+                maxlength="30"
+                autocomplete="username"
+                required
+              >
+            </div>
+
+            <small>
+              Entre 3 et 30 caractères.
+            </small>
+
+          </div>
+
+
+          <!-- EMAIL -->
+          <div class="form-group">
+
+            <label for="email">
+              Adresse email
+            </label>
+
+            <div class="input-wrapper">
+              <span class="input-icon">✉️</span>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemple@email.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+          </div>
+
+
+          <!-- PAYS -->
+          <div class="form-group">
+
+            <label for="country">
+              Pays
+            </label>
+
+            <div class="input-wrapper">
+              <span class="input-icon">🌍</span>
+
+              <select
+                id="country"
+                name="country"
+                required
+              >
+
+                <option value="">
+                  Sélectionner votre pays
+                </option>
+
+                <option value="BF">
+                  🇧🇫 Burkina Faso
+                </option>
+
+                <option value="CI">
+                  🇨🇮 Côte d’Ivoire
+                </option>
+
+                <option value="TG">
+                  🇹🇬 Togo
+                </option>
+
+                <option value="BJ">
+                  🇧🇯 Bénin
+                </option>
+
+                <option value="ML">
+                  🇲🇱 Mali
+                </option>
+
+                <option value="SN">
+                  🇸🇳 Sénégal
+                </option>
+
+              </select>
+            </div>
+
+          </div>
+
+
+          <!-- MOT DE PASSE -->
+          <div class="form-group">
+
+            <label for="password">
+              Mot de passe
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">🔒</span>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Minimum 8 caractères"
+                minlength="8"
+                autocomplete="new-password"
+                required
+              >
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="togglePassword"
+                aria-label="Afficher le mot de passe"
+              >
+                👁
+              </button>
+
+            </div>
+
+            <div class="password-strength">
+              <div
+                id="strengthBar"
+                class="strength-bar"
+              ></div>
+            </div>
+
+            <small id="strengthText">
+              Minimum 8 caractères
+            </small>
+
+          </div>
+
+
+          <!-- CONFIRMATION -->
+          <div class="form-group">
+
+            <label for="passwordConfirm">
+              Confirmer le mot de passe
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">🔐</span>
+
+              <input
+                type="password"
+                id="passwordConfirm"
+                name="passwordConfirm"
+                placeholder="Confirme ton mot de passe"
+                minlength="8"
+                autocomplete="new-password"
+                required
+              >
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="togglePasswordConfirm"
+                aria-label="Afficher le mot de passe"
+              >
+                👁
+              </button>
+
+            </div>
+
+            <small id="matchText"></small>
+
+          </div>
+
+
+          <!-- CONDITIONS -->
+          <div class="terms">
+
+            <label class="checkbox-label">
+
+              <input
+                type="checkbox"
+                id="terms"
+                required
+              >
+
+              <span>
+                J'accepte les
+                <a href="#" onclick="return false;">
+                  conditions d'utilisation
+                </a>
+                et la politique de confidentialité.
+              </span>
+
+            </label>
+
+          </div>
+
+
+          <!-- BOUTON -->
+          <button
+            type="submit"
+            id="submitButton"
+            class="submit-button"
+          >
+            <span id="buttonText">
+              Créer mon compte
+            </span>
+
+            <span
+              id="loader"
+              class="loader"
+              style="display:none;"
+            ></span>
+          </button>
+
+
+          <div class="security-note">
+            🔒 Tes informations sont protégées.
+          </div>
+
+        </form>
+
+
+        <div class="back-home">
+          <a href="index.html">
+            ← Retour à l'accueil
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ============================= -->
+  <!-- SUPABASE + INSCRIPTION -->
+  <!-- ============================= -->
+
+  <script>
+
+    /*
+      ==========================================
+      CONFIGURATION SUPABASE AFRIQUIZ
+      ==========================================
+    */
+
+    const SUPABASE_URL =
+      "https://ypobyeboanzgyanvdcdq.supabase.co";
+
+    /*
+      IMPORTANT :
+      Remplace cette valeur par ta clé
+      Publishable / anon de ton projet Supabase.
+
+      NE METS JAMAIS :
+      - service_role
+      - secret key
+    */
+
+    const SUPABASE_ANON_KEY =
+      "REMPLACE_PAR_TA_CLE_PUBLISHABLE_SUPABASE";
+
+
+    const { createClient } = window.supabase;
+
+    const supabaseClient = createClient(
+      SUPABASE_URL,
+      SUPABASE_ANON_KEY
+    );
+
+
+    /*
+      ==========================================
+      ELEMENTS
+      ==========================================
+    */
+
+    const form =
+      document.getElementById("registerForm");
+
+    const usernameInput =
+      document.getElementById("username");
+
+    const emailInput =
+      document.getElementById("email");
+
+    const countryInput =
+      document.getElementById("country");
+
+    const passwordInput =
+      document.getElementById("password");
+
+    const passwordConfirmInput =
+      document.getElementById("passwordConfirm");
+
+    const termsInput =
+      document.getElementById("terms");
+
+    const message =
+      document.getElementById("message");
+
+    const submitButton =
+      document.getElementById("submitButton");
+
+    const buttonText =
+      document.getElementById("buttonText");
+
+    const loader =
+      document.getElementById("loader");
+
+    const strengthBar =
+      document.getElementById("strengthBar");
+
+    const strengthText =
+      document.getElementById("strengthText");
+
+    const matchText =
+      document.getElementById("matchText");
+
+
+    /*
+      ==========================================
+      AFFICHER UN MESSAGE
+      ==========================================
+    */
+
+    function showMessage(text, type) {
+
+      message.textContent = text;
+
+      message.className =
+        "message " + type;
+
+      message.style.display = "block";
+
+    }
+
+
+    function hideMessage() {
+
+      message.textContent = "";
+
+      message.className = "message";
+
+      message.style.display = "none";
+
+    }
+
+
+    /*
+      ==========================================
+      AFFICHER / CACHER MOT DE PASSE
+      ==========================================
+    */
+
+    document
+      .getElementById("togglePassword")
+      .addEventListener("click", function () {
+
+        const type =
+          passwordInput.type === "password"
+            ? "text"
+            : "password";
+
+        passwordInput.type = type;
+
+        this.textContent =
+          type === "password"
+            ? "👁"
+            : "🙈";
+
+      });
+
+
+    document
+      .getElementById("togglePasswordConfirm")
+      .addEventListener("click", function () {
+
+        const type =
+          passwordConfirmInput.type === "password"
+            ? "text"
+            : "password";
+
+        passwordConfirmInput.type = type;
+
+        this.textContent =
+          type === "password"
+            ? "👁"
+            : "🙈";
+
+      });
+
+
+    /*
+      ==========================================
+      FORCE DU MOT DE PASSE
+      ==========================================
+    */
+
+    passwordInput.addEventListener(
+      "input",
+      function () {
+
+        const password =
+          passwordInput.value;
+
+        if (!password) {
+
+          strengthBar.style.width = "0%";
+
+          strengthText.textContent =
+            "Minimum 8 caractères";
+
+          return;
+        }
+
+
+        let score = 0;
+
+
+        if (password.length >= 8)
+          score++;
+
+
+        if (password.length >= 12)
+          score++;
+
+
+        if (/[A-Z]/.test(password))
+          score++;
+
+
+        if (/[0-9]/.test(password))
+          score++;
+
+
+        if (/[^A-Za-z0-9]/.test(password))
+          score++;
+
+
+        const percentage =
+          Math.min(score * 20, 100);
+
+
+        strengthBar.style.width =
+          percentage + "%";
+
+
+        if (score <= 2) {
+
+          strengthText.textContent =
+            "Mot de passe faible";
+
+        } else if (score <= 4) {
+
+          strengthText.textContent =
+            "Mot de passe moyen";
+
+        } else {
+
+          strengthText.textContent =
+            "Mot de passe fort";
+
+        }
+
+      }
+    );
+
+
+    /*
+      ==========================================
+      VERIFICATION DES MOTS DE PASSE
+      ==========================================
+    */
+
+    passwordConfirmInput.addEventListener(
+      "input",
+      checkPasswords
+    );
+
+    passwordInput.addEventListener(
+      "input",
+      checkPasswords
+    );
+
+
+    function checkPasswords() {
+
+      const password =
+        passwordInput.value;
+
+      const confirmation =
+        passwordConfirmInput.value;
+
+
+      if (!confirmation) {
+
+        matchText.textContent = "";
+
+        return false;
+      }
+
+
+      if (password === confirmation) {
+
+        matchText.textContent =
+          "✓ Les mots de passe correspondent";
+
+        matchText.className =
+          "success-text";
+
+        return true;
+
+      } else {
+
+        matchText.textContent =
+          "✕ Les mots de passe ne correspondent pas";
+
+        matchText.className =
+          "error-text";
+
+        return false;
+
+      }
+
+    }
+
+
+    /*
+      ==========================================
+      EMAIL
+      ==========================================
+    */
+
+    function validEmail(email) {
+
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        .test(email);
+
+    }
+
+
+    /*
+      ==========================================
+      ACTIVATION / DESACTIVATION DU BOUTON
+      ==========================================
+    */
+
+    function setLoading(loading) {
+
+      submitButton.disabled =
+        loading;
+
+      if (loading) {
+
+        buttonText.textContent =
+          "Création du compte...";
+
+        loader.style.display =
+          "inline-block";
+
+      } else {
+
+        buttonText.textContent =
+          "Créer mon compte";
+
+        loader.style.display =
+          "none";
+
+      }
+
+    }
+
+
+    /*
+      ==========================================
+      INSCRIPTION
+      ==========================================
+    */
+
+    form.addEventListener(
+      "submit",
+      async function (event) {
+
+        event.preventDefault();
+
+        hideMessage();
+
+
+        const username =
+          usernameInput.value.trim();
+
+        const email =
+          emailInput.value.trim().toLowerCase();
+
+        const country =
+          countryInput.value;
+
+        const password =
+          passwordInput.value;
+
+        const passwordConfirm =
+          passwordConfirmInput.value;
+
+
+        /*
+          VALIDATION PSEUDO
+        */
+
+        if (
+          username.length < 3 ||
+          username.length > 30
+        ) {
+
+          showMessage(
+            "Le pseudo doit contenir entre 3 et 30 caractères.",
+            "error"
+          );
+
+          usernameInput.focus();
+
+          return;
+        }
+
+
+        /*
+          VALIDATION EMAIL
+        */
+
+        if (!validEmail(email)) {
+
+          showMessage(
+            "Veuillez entrer une adresse email valide.",
+            "error"
+          );
+
+          emailInput.focus();
+
+          return;
+        }
+
+
+        /*
+          VALIDATION PAYS
+        */
+
+        if (!country) {
+
+          showMessage(
+            "Veuillez sélectionner votre pays.",
+            "error"
+          );
+
+          countryInput.focus();
+
+          return;
+        }
+
+
+        /*
+          VALIDATION MOT DE PASSE
+        */
+
+        if (password.length < 8) {
+
+          showMessage(
+            "Le mot de passe doit contenir au moins 8 caractères.",
+            "error"
+          );
+
+          passwordInput.focus();
+
+          return;
+        }
+
+
+        /*
+          CONFIRMATION
+        */
+
+        if (password !== passwordConfirm) {
+
+          showMessage(
+            "Les deux mots de passe ne correspondent pas.",
+            "error"
+          );
+
+          passwordConfirmInput.focus();
+
+          return;
+        }
+
+
+        /*
+          CONDITIONS
+        */
+
+        if (!termsInput.checked) {
+
+          showMessage(
+            "Vous devez accepter les conditions d'utilisation.",
+            "error"
+          );
+
+          return;
+        }
+
+
+        setLoading(true);
+
+
+        try {
+
+          /*
+            APPEL DIRECT À LA FONCTION
+            SUPABASE register_app_user
+
+            La fonction SQL :
+            - vérifie le pays
+            - vérifie le pseudo
+            - vérifie l'email
+            - vérifie le mot de passe
+            - génère le QZ-XXXX-XXXXXXXX
+            - hash le mot de passe avec bcrypt
+            - crée l'utilisateur
+          */
+
+          const {
+            data,
+            error
+          } = await supabaseClient.rpc(
+            "register_app_user",
+            {
+              p_username: username,
+              p_email: email,
+              p_country_code: country,
+              p_password: password
+            }
+          );
+
+
+          /*
+            ERREUR SUPABASE
+          */
+
+          if (error) {
+
+            console.error(
+              "Erreur inscription Supabase:",
+              error
+            );
+
+            let errorMessage =
+              error.message ||
+              "Impossible de créer le compte.";
+
+
+            /*
+              Messages plus simples
+            */
+
+            if (
+              errorMessage
+                .toLowerCase()
+                .includes("pseudo")
+            ) {
+
+              errorMessage =
+                "Ce pseudo est déjà utilisé.";
+
+            } else if (
+              errorMessage
+                .toLowerCase()
+                .includes("email")
+            ) {
+
+              errorMessage =
+                "Cet email est déjà utilisé.";
+
+            } else if (
+              errorMessage
+                .toLowerCase()
+                .includes("pays")
+            ) {
+
+              errorMessage =
+                "Ce pays n'est pas encore éligible.";
+
+            }
+
+
+            showMessage(
+              errorMessage,
+              "error"
+            );
+
+            setLoading(false);
+
+            return;
+          }
+
+
+          /*
+            COMPTE CRÉÉ
+          */
+
+          console.log(
+            "Utilisateur créé :",
+            data
+          );
+
+
+          /*
+            Récupération des données
+          */
+
+          let professionalId = "";
+
+          let createdUsername =
+            username;
+
+
+          if (data) {
+
+            professionalId =
+              data.professional_id ||
+              "";
+
+            createdUsername =
+              data.username ||
+              username;
+
+          }
+
+
+          /*
+            Message de succès
+          */
+
+          showMessage(
+            "Compte créé avec succès !",
+            "success"
+          );
+
+
+          /*
+            Petit délai pour afficher
+            le succès avant redirection
+          */
+
+          setTimeout(
+            function () {
+
+              /*
+                Transmission du pseudo et
+                de l'identifiant professionnel
+                vers la page connexion.
+              */
+
+              const params =
+                new URLSearchParams();
+
+              params.set(
+                "registered",
+                "1"
+              );
+
+              params.set(
+                "username",
+                createdUsername
+              );
+
+
+              if (professionalId) {
+
+                params.set(
+                  "professional_id",
+                  professionalId
+                );
+
+              }
+
+
+              window.location.href =
+                "connexion.html?" +
+                params.toString();
+
+            },
+            1200
+          );
+
+
+        } catch (error) {
+
+          console.error(
+            "Erreur inattendue:",
+            error
+          );
+
+
+          showMessage(
+            "Une erreur inattendue est survenue. Réessayez.",
+            "error"
+          );
+
+
+          setLoading(false);
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+  </html>
