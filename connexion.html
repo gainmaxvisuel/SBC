@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Afriquiz — Connexion</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <link rel="stylesheet" href="connexion.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- ==============================
+         PARTIE GAUCHE
+    =============================== -->
+
+    <section class="intro">
+
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Afriquiz">
+        </a>
+
+        <div class="intro-content">
+
+            <div class="badge">
+                PLATEFORME DE QUIZ
+            </div>
+
+            <h1>
+                Content de te
+                <span>revoir.</span>
+            </h1>
+
+            <p>
+                Connecte-toi à ton espace Afriquiz
+                et retrouve tes quiz, tes compétitions
+                et tes performances.
+            </p>
+
+            <div class="advantages">
+
+                <div class="advantage">
+                    <div class="icon">🏆</div>
+
+                    <div>
+                        <strong>Défie les autres</strong>
+                        <span>
+                            Participe aux compétitions
+                            et mesure ton niveau.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="advantage">
+                    <div class="icon">⚡</div>
+
+                    <div>
+                        <strong>Sois rapide</strong>
+                        <span>
+                            Chaque seconde peut faire
+                            la différence.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="advantage">
+                    <div class="icon">📊</div>
+
+                    <div>
+                        <strong>Suis tes performances</strong>
+                        <span>
+                            Consulte tes scores et tes records.
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="intro-footer">
+            © 2026 Afriquiz — Tous droits réservés.
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         PARTIE DROITE
+    =============================== -->
+
+    <section class="login-area">
+
+        <div class="login-card">
+
+            <div class="mobile-logo">
+
+                <a href="index.html">
+                    <img src="logo.png" alt="Afriquiz">
+                </a>
+
+            </div>
+
+
+            <div class="heading">
+
+                <div class="small-title">
+                    ESPACE MEMBRE
+                </div>
+
+                <h2>
+                    Connexion
+                </h2>
+
+                <p>
+                    Connecte-toi pour accéder à ton espace.
+                </p>
+
+            </div>
+
+
+            <div
+                id="formMessage"
+                class="form-message"
+            ></div>
+
+
+            <form
+                id="loginForm"
+                novalidate
+            >
+
+                <!-- IDENTIFIANT -->
+
+                <div class="field">
+
+                    <label for="identifier">
+                        Pseudo ou email
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+                        <input
+                            type="text"
+                            id="identifier"
+                            name="identifier"
+                            placeholder="Ton pseudo ou ton email"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- MOT DE PASSE -->
+
+                <div class="field">
+
+                    <label for="password">
+                        Mot de passe
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Ton mot de passe"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                            aria-label="Afficher le mot de passe"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOUTON -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitBtn"
+                >
+
+                    <span id="buttonText">
+                        Se connecter
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+            </form>
+
+
+            <div class="register">
+
+                Pas encore de compte ?
+
+                <a href="inscription.html">
+                    S'inscrire
+                </a>
+
+            </div>
+
+
+            <div class="security">
+                🔒 Connexion sécurisée
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="connexion.js" defer></script>
+
+</body>
+</html>
