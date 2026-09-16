@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inscription — Afriquiz</title>
+
+    <meta
+        name="description"
+        content="Créez votre compte Afriquiz et commencez à relever des défis."
+    >
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="inscription.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- PARTIE GAUCHE -->
+
+    <section class="intro">
+
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Afriquiz">
+        </a>
+
+        <div class="intro-content">
+
+            <span class="badge">
+                ✦ REJOIGNEZ AFRIQUIZ
+            </span>
+
+            <h1>
+                Votre aventure
+                <span>commence ici.</span>
+            </h1>
+
+            <p>
+                Créez votre compte gratuitement et entrez
+                dans l'univers des quiz, des défis et des
+                compétitions Afriquiz.
+            </p>
+
+            <div class="advantages">
+
+                <div class="advantage">
+                    <div class="icon">✓</div>
+
+                    <div>
+                        <strong>Inscription gratuite</strong>
+                        <span>Créez votre compte en quelques secondes.</span>
+                    </div>
+                </div>
+
+                <div class="advantage">
+                    <div class="icon">⚡</div>
+
+                    <div>
+                        <strong>Des défis passionnants</strong>
+                        <span>Testez vos connaissances et votre rapidité.</span>
+                    </div>
+                </div>
+
+                <div class="advantage">
+                    <div class="icon">🏆</div>
+
+                    <div>
+                        <strong>Faites votre place</strong>
+                        <span>Progressez et découvrez votre classement.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="intro-footer">
+            © 2026 Afriquiz
+        </div>
+
+    </section>
+
+
+    <!-- PARTIE DROITE -->
+
+    <main class="register-area">
+
+        <div class="register-card">
+
+            <div class="mobile-logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Afriquiz">
+                </a>
+            </div>
+
+            <div class="heading">
+
+                <span class="small-title">
+                    CRÉER UN COMPTE
+                </span>
+
+                <h2>
+                    Bienvenue sur Afriquiz
+                </h2>
+
+                <p>
+                    Remplissez les informations ci-dessous
+                    pour commencer.
+                </p>
+
+            </div>
+
+
+            <form id="registerForm" novalidate>
+
+                <!-- PSEUDO -->
+
+                <div class="field">
+
+                    <label for="username">
+                        Pseudo
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">◉</span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Ex : steeve123"
+                            autocomplete="username"
+                            minlength="3"
+                            maxlength="30"
+                            required
+                        >
+
+                    </div>
+
+                    <small>
+                        3 à 30 caractères.
+                    </small>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="field">
+
+                    <label for="email">
+                        Adresse email
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">@</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="exemple@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAYS -->
+
+                <div class="field">
+
+                    <label for="country">
+                        Pays
+                    </label>
+
+                    <div class="input-wrapper select-wrapper">
+
+                        <span class="input-icon">🌍</span>
+
+                        <select
+                            id="country"
+                            name="country"
+                            autocomplete="country"
+                            required
+                        >
+
+                            <option value="" selected disabled>
+                                Sélectionnez votre pays
+                            </option>
+
+                            <option value="BF">
+                                🇧🇫 Burkina Faso
+                            </option>
+
+                            <option value="CI">
+                                🇨🇮 Côte d'Ivoire
+                            </option>
+
+                            <option value="TG">
+                                🇹🇬 Togo
+                            </option>
+
+                            <option value="BJ">
+                                🇧🇯 Bénin
+                            </option>
+
+                            <option value="ML">
+                                🇲🇱 Mali
+                            </option>
+
+                            <option value="SN">
+                                🇸🇳 Sénégal
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MOT DE PASSE -->
+
+                <div class="field">
+
+                    <label for="password">
+                        Mot de passe
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">●</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Votre mot de passe"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-target="password"
+                            aria-label="Afficher le mot de passe"
+                        >
+                            ◉
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <small id="passwordHelp">
+                        Minimum 8 caractères.
+                    </small>
+
+                </div>
+
+
+                <!-- CONFIRMATION -->
+
+                <div class="field">
+
+                    <label for="passwordConfirm">
+                        Confirmer le mot de passe
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">●</span>
+
+                        <input
+                            type="password"
+                            id="passwordConfirm"
+                            name="passwordConfirm"
+                            placeholder="Confirmez votre mot de passe"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-target="passwordConfirm"
+                            aria-label="Afficher le mot de passe"
+                        >
+                            ◉
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONDITIONS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        J'accepte les
+                        <a href="#">
+                            conditions d'utilisation
+                        </a>
+                        et la
+                        <a href="#">
+                            politique de confidentialité
+                        </a>.
+                    </span>
+
+                </label>
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="formMessage"
+                    class="form-message"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- BOUTON -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitBtn"
+                >
+
+                    <span>
+                        Créer mon compte
+                    </span>
+
+                    <strong>→</strong>
+
+                </button>
+
+            </form>
+
+
+            <div class="login">
+
+                Vous avez déjà un compte ?
+
+                <a href="connexion.html">
+                    Se connecter
+                </a>
+
+            </div>
+
+
+            <div class="security">
+
+                🔒 Vos informations sont protégées.
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+const form = document.getElementById("registerForm");
+const password = document.getElementById("password");
+const passwordConfirm = document.getElementById("passwordConfirm");
+const message = document.getElementById("formMessage");
+const submitBtn = document.getElementById("submitBtn");
+
+
+// AFFICHER / MASQUER MOT DE PASSE
+
+document.querySelectorAll(".show-password").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const input =
+            document.getElementById(button.dataset.target);
+
+        if (input.type === "password") {
+
+            input.type = "text";
+            button.textContent = "○";
+
+        } else {
+
+            input.type = "password";
+            button.textContent = "◉";
+
+        }
+
+    });
+
+});
+
+
+// INDICATEUR MOT DE PASSE
+
+password.addEventListener("input", () => {
+
+    const value = password.value;
+    const bars =
+        document.querySelectorAll(".password-strength span");
+
+    let strength = 0;
+
+    if (value.length >= 8) strength++;
+    if (/[A-Z]/.test(value)) strength++;
+    if (/[0-9]/.test(value)) strength++;
+    if (/[^A-Za-z0-9]/.test(value)) strength++;
+
+    bars.forEach((bar, index) => {
+
+        bar.classList.toggle(
+            "active",
+            index < strength
+        );
+
+    });
+
+});
+
+
+// VALIDATION
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    message.className = "form-message";
+    message.textContent = "";
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const country =
+        document.getElementById("country").value;
+
+    const terms =
+        document.getElementById("terms").checked;
+
+
+    if (username.length < 3) {
+
+        showError("Votre pseudo doit contenir au moins 3 caractères.");
+        return;
+
+    }
+
+
+    if (!email) {
+
+        showError("Veuillez saisir votre adresse email.");
+        return;
+
+    }
+
+
+    if (!country) {
+
+        showError("Veuillez sélectionner votre pays.");
+        return;
+
+    }
+
+
+    if (password.value.length < 8) {
+
+        showError("Votre mot de passe doit contenir au moins 8 caractères.");
+        return;
+
+    }
+
+
+    if (password.value !== passwordConfirm.value) {
+
+        showError("Les deux mots de passe ne correspondent pas.");
+        return;
+
+    }
+
+
+    if (!terms) {
+
+        showError(
+            "Vous devez accepter les conditions d'utilisation."
+        );
+
+        return;
+
+    }
+
+
+    /*
+      POUR L'INSTANT :
+
+      Le formulaire est validé côté navigateur.
+
+      La création réelle du compte sera reliée
+      ensuite à notre backend / Supabase app_users.
+
+      Le mot de passe ne doit jamais être enregistré
+      directement dans le navigateur.
+    */
+
+
+    showSuccess(
+        "Formulaire valide. La création du compte sera connectée au système Afriquiz."
+    );
+
+});
+
+
+function showError(text) {
+
+    message.className =
+        "form-message error";
+
+    message.textContent =
+        text;
+
+}
+
+
+function showSuccess(text) {
+
+    message.className =
+        "form-message success";
+
+    message.textContent =
+        text;
+
+}
+
+</script>
+
+</body>
+                          </html>
