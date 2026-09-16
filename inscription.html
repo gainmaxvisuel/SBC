@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Inscription — Afriquiz</title>
+
+    <link rel="icon" href="logo.png">
+
+    <link rel="stylesheet"
+          href="inscription.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- ================================
+         PARTIE GAUCHE
+    ================================= -->
+
+    <section class="intro">
+
+        <div class="logo">
+            <img src="logo.png" alt="Afriquiz">
+        </div>
+
+        <div class="intro-content">
+
+            <span class="badge">
+                PLATEFORME DE QUIZ
+            </span>
+
+            <h1>
+                Votre aventure
+                <span>commence ici.</span>
+            </h1>
+
+            <p>
+                Testez vos connaissances, participez à des
+                compétitions et mesurez votre niveau face
+                aux autres joueurs.
+            </p>
+
+            <div class="advantages">
+
+                <div class="advantage">
+
+                    <div class="icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Compte professionnel
+                        </strong>
+
+                        <span>
+                            Votre identifiant unique Afriquiz.
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="advantage">
+
+                    <div class="icon">
+                        ⚡
+                    </div>
+
+                    <div>
+                        <strong>
+                            Quiz et compétitions
+                        </strong>
+
+                        <span>
+                            Défiez vos connaissances.
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="advantage">
+
+                    <div class="icon">
+                        🏆
+                    </div>
+
+                    <div>
+                        <strong>
+                            Classements
+                        </strong>
+
+                        <span>
+                            Suivez vos performances.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="intro-footer">
+            © 2026 Afriquiz — Tous droits réservés.
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         PARTIE DROITE
+    ================================= -->
+
+    <section class="register-area">
+
+        <div class="register-card">
+
+            <div class="mobile-logo">
+                <img src="logo.png" alt="Afriquiz">
+            </div>
+
+            <div class="heading">
+
+                <div class="small-title">
+                    CRÉER UN COMPTE
+                </div>
+
+                <h2>
+                    Bienvenue sur Afriquiz
+                </h2>
+
+                <p>
+                    Créez votre compte et commencez
+                    votre aventure.
+                </p>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div id="formMessage"
+                 class="form-message">
+            </div>
+
+
+            <!-- FORMULAIRE -->
+
+            <form id="registerForm"
+                  novalidate>
+
+
+                <!-- PSEUDO -->
+
+                <div class="field">
+
+                    <label for="username">
+                        Pseudo
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            @
+                        </span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Votre pseudo"
+                            minlength="3"
+                            maxlength="30"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                    <small>
+                        3 à 30 caractères.
+                    </small>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="field">
+
+                    <label for="email">
+                        Adresse email
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="exemple@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAYS -->
+
+                <div class="field">
+
+                    <label for="country">
+                        Pays
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🌍
+                        </span>
+
+                        <select
+                            id="country"
+                            name="country"
+                            required
+                        >
+
+                            <option value="">
+                                Sélectionnez votre pays
+                            </option>
+
+                            <option value="BF">
+                                🇧🇫 Burkina Faso
+                            </option>
+
+                            <option value="CI">
+                                🇨🇮 Côte d’Ivoire
+                            </option>
+
+                            <option value="TG">
+                                🇹🇬 Togo
+                            </option>
+
+                            <option value="BJ">
+                                🇧🇯 Bénin
+                            </option>
+
+                            <option value="ML">
+                                🇲🇱 Mali
+                            </option>
+
+                            <option value="SN">
+                                🇸🇳 Sénégal
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MOT DE PASSE -->
+
+                <div class="field">
+
+                    <label for="password">
+                        Mot de passe
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Votre mot de passe"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                            aria-label="Afficher le mot de passe"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength"
+                         id="passwordStrength">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <small>
+                        Minimum 8 caractères.
+                    </small>
+
+                </div>
+
+
+                <!-- CONFIRMATION -->
+
+                <div class="field">
+
+                    <label for="confirmPassword">
+                        Confirmer le mot de passe
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirmez votre mot de passe"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showConfirmPassword"
+                            aria-label="Afficher le mot de passe"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONDITIONS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        J'accepte les
+                        <a href="#">
+                            conditions d'utilisation
+                        </a>
+                        et la politique de confidentialité
+                        d'Afriquiz.
+                    </span>
+
+                </label>
+
+
+                <!-- BOUTON -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitBtn"
+                >
+
+                    <span id="submitText">
+                        Créer mon compte
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+            </form>
+
+
+            <!-- CONNEXION -->
+
+            <div class="login">
+
+                Vous avez déjà un compte ?
+
+                <a href="connexion.html">
+                    Se connecter
+                </a>
+
+            </div>
+
+
+            <!-- SÉCURITÉ -->
+
+            <div class="security">
+
+                🔒 Vos informations sont protégées
+                et votre mot de passe est sécurisé.
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   CONFIGURATION SUPABASE
+========================================= */
+
+const SUPABASE_URL =
+    "https://ypobyeboanzgyanvdcdq.supabase.co";
+
+const SUPABASE_KEY =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlwb2J5ZWJvYW56Z3lhbnZkY2RxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk1NjE3NDYsImV4cCI6MjEwNTEzNzc0Nn0.qd09anaLqxjFfVTbsamDghfuKzlTskzxRzN_pqARnK8";
+
+
+const {
+    createClient
+} = window.supabase;
+
+
+const supabaseClient =
+    createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+/* =========================================
+   ÉLÉMENTS
+========================================= */
+
+const form =
+    document.getElementById("registerForm");
+
+const usernameInput =
+    document.getElementById("username");
+
+const emailInput =
+    document.getElementById("email");
+
+const countryInput =
+    document.getElementById("country");
+
+const passwordInput =
+    document.getElementById("password");
+
+const confirmPasswordInput =
+    document.getElementById("confirmPassword");
+
+const termsInput =
+    document.getElementById("terms");
+
+const message =
+    document.getElementById("formMessage");
+
+const submitBtn =
+    document.getElementById("submitBtn");
+
+const submitText =
+    document.getElementById("submitText");
+
+
+/* =========================================
+   MESSAGE ERREUR
+========================================= */
+
+function showError(text) {
+
+    message.textContent = text;
+
+    message.className =
+        "form-message error";
+
+}
+
+
+/* =========================================
+   MESSAGE SUCCÈS
+========================================= */
+
+function showSuccess(text) {
+
+    message.textContent = text;
+
+    message.className =
+        "form-message success";
+
+}
+
+
+/* =========================================
+   CHARGEMENT
+========================================= */
+
+function setLoading(loading) {
+
+    submitBtn.disabled = loading;
+
+    if (loading) {
+
+        submitText.textContent =
+            "Création du compte...";
+
+        submitBtn.style.opacity =
+            "0.7";
+
+    } else {
+
+        submitText.textContent =
+            "Créer mon compte";
+
+        submitBtn.style.opacity =
+            "1";
+
+    }
+
+}
+
+
+/* =========================================
+   AFFICHER / CACHER MOT DE PASSE
+========================================= */
+
+document
+    .getElementById("showPassword")
+    .addEventListener("click", function () {
+
+        if (
+            passwordInput.type === "password"
+        ) {
+
+            passwordInput.type =
+                "text";
+
+            this.textContent =
+                "🙈";
+
+        } else {
+
+            passwordInput.type =
+                "password";
+
+            this.textContent =
+                "👁";
+
+        }
+
+    });
+
+
+document
+    .getElementById("showConfirmPassword")
+    .addEventListener("click", function () {
+
+        if (
+            confirmPasswordInput.type === "password"
+        ) {
+
+            confirmPasswordInput.type =
+                "text";
+
+            this.textContent =
+                "🙈";
+
+        } else {
+
+            confirmPasswordInput.type =
+                "password";
+
+            this.textContent =
+                "👁";
+
+        }
+
+    });
+
+
+/* =========================================
+   FORCE DU MOT DE PASSE
+========================================= */
+
+passwordInput.addEventListener(
+    "input",
+    function () {
+
+        const value =
+            this.value;
+
+        const bars =
+            document.querySelectorAll(
+                "#passwordStrength span"
+            );
+
+        let strength = 0;
+
+
+        if (value.length >= 8)
+            strength++;
+
+        if (/[A-Z]/.test(value))
+            strength++;
+
+        if (/[0-9]/.test(value))
+            strength++;
+
+        if (/[^A-Za-z0-9]/.test(value))
+            strength++;
+
+
+        bars.forEach(
+            (bar, index) => {
+
+                if (index < strength) {
+
+                    bar.classList.add(
+                        "active"
+                    );
+
+                } else {
+
+                    bar.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================
+   INSCRIPTION
+========================================= */
+
+form.addEventListener(
+    "submit",
+    async function (e) {
+
+        /*
+         IMPORTANT :
+         Empêche le navigateur de
+         recharger la page.
+        */
+
+        e.preventDefault();
+
+        console.log(
+            "FORMULAIRE ENVOYÉ"
+        );
+
+
+        /* Nettoyer ancien message */
+
+        message.className =
+            "form-message";
+
+        message.textContent =
+            "";
+
+
+        /* Récupération */
+
+        const username =
+            usernameInput.value.trim();
+
+        const email =
+            emailInput.value.trim()
+                .toLowerCase();
+
+        const country =
+            countryInput.value.trim()
+                .toUpperCase();
+
+        const password =
+            passwordInput.value;
+
+        const confirmPassword =
+            confirmPasswordInput.value;
+
+
+        /* =================================
+           VALIDATIONS
+        ================================= */
+
+
+        if (
+            username.length < 3 ||
+            username.length > 30
+        ) {
+
+            showError(
+                "Votre pseudo doit contenir entre 3 et 30 caractères."
+            );
+
+            return;
+
+        }
+
+
+        if (
+            !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/
+                .test(email)
+        ) {
+
+            showError(
+                "Veuillez entrer une adresse email valide."
+            );
+
+            return;
+
+        }
+
+
+        if (!country) {
+
+            showError(
+                "Veuillez sélectionner votre pays."
+            );
+
+            return;
+
+        }
+
+
+        if (password.length < 8) {
+
+            showError(
+                "Votre mot de passe doit contenir au moins 8 caractères."
+            );
+
+            return;
+
+        }
+
+
+        if (
+            password !== confirmPassword
+        ) {
+
+            showError(
+                "Les deux mots de passe ne correspondent pas."
+            );
+
+            return;
+
+        }
+
+
+        if (!termsInput.checked) {
+
+            showError(
+                "Vous devez accepter les conditions d'utilisation."
+            );
+
+            return;
+
+        }
+
+
+        /* =================================
+           CHARGEMENT
+        ================================= */
+
+        setLoading(true);
+
+
+        try {
+
+            console.log(
+                "Tentative d'inscription..."
+            );
+
+
+            /* =================================
+               APPEL SUPABASE
+            ================================= */
+
+            const {
+                data,
+                error
+            } = await supabaseClient.rpc(
+                "register_app_user",
+                {
+                    p_username:
+                        username,
+
+                    p_email:
+                        email,
+
+                    p_country_code:
+                        country,
+
+                    p_password:
+                        password
+                }
+            );
+
+
+            console.log(
+                "DATA :",
+                data
+            );
+
+            console.log(
+                "ERROR :",
+                error
+            );
+
+
+            /* =================================
+               ERREUR SUPABASE
+            ================================= */
+
+            if (error) {
+
+                console.error(
+                    "Erreur Supabase :",
+                    error
+                );
+
+                const errorMessage =
+                    error.message ||
+                    "";
+
+
+                if (
+                    errorMessage
+                        .toLowerCase()
+                        .includes("pseudo")
+                ) {
+
+                    showError(
+                        "Ce pseudo est déjà utilisé."
+                    );
+
+                }
+
+                else if (
+                    errorMessage
+                        .toLowerCase()
+                        .includes("email")
+                ) {
+
+                    showError(
+                        "Cette adresse email est déjà utilisée."
+                    );
+
+                }
+
+                else if (
+                    errorMessage
+                        .toLowerCase()
+                        .includes("pays")
+                ) {
+
+                    showError(
+                        "Ce pays n'est pas éligible."
+                    );
+
+                }
+
+                else if (
+                    errorMessage
+                        .toLowerCase()
+                        .includes("mot de passe")
+                ) {
+
+                    showError(
+                        "Le mot de passe n'est pas valide."
+                    );
+
+                }
+
+                else {
+
+                    showError(
+                        errorMessage ||
+                        "Impossible de créer le compte."
+                    );
+
+                }
+
+                setLoading(false);
+
+                return;
+
+     if (!data) {
+
+    console.error(
+        "Supabase n'a retourné aucune donnée."
+    );
+
+    showError(
+        "Le compte n'a pas pu être créé. Aucune donnée reçue."
+    );
+
+    setLoading(false);
+
+    return;
+     }
