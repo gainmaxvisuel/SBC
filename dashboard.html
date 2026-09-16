@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afriquiz — Accueil</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="dashboard.js" defer></script>
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <aside id="sidebar">
+
+        <div class="menu-header">
+            <img src="logo.png" alt="Afriquiz">
+
+            <button id="closeMenu">✕</button>
+        </div>
+
+        <nav>
+            <a href="dashboard.html" class="active">🏠 Accueil</a>
+            <a href="quiz.html">🎯 Quiz</a>
+            <a href="competitions.html">🏆 Compétitions</a>
+            <a href="performances.html">📊 Mes performances</a>
+            <a href="records.html">🥇 Mes records</a>
+            <a href="participations.html">📋 Mes participations</a>
+            <a href="profil.html">👤 Mon profil</a>
+
+            <hr>
+
+            <a href="parametres.html">⚙️ Paramètres</a>
+            <button id="logoutBtn">🚪 Déconnexion</button>
+        </nav>
+
+    </aside>
+
+
+    <!-- CONTENU -->
+    <main>
+
+        <header>
+            <button id="openMenu">☰</button>
+
+            <img src="logo.png" alt="Afriquiz" class="mobile-logo">
+
+            <div class="user">
+                👤 <span id="topUsername">...</span>
+            </div>
+        </header>
+
+
+        <section class="dashboard">
+
+            <div class="welcome">
+                <span>👋 BIENVENUE SUR AFRIQUIZ</span>
+
+                <h1>
+                    Bonjour <strong id="username">...</strong>
+                </h1>
+
+                <p>
+                    Prêt à tester tes connaissances ?
+                </p>
+
+                <small id="professionalId">
+                    ID : ...
+                </small>
+            </div>
+
+
+            <div class="stats">
+
+                <div>
+                    🎯
+                    <strong id="totalQuizzes">0</strong>
+                    <span>Quiz réalisés</span>
+                </div>
+
+                <div>
+                    🏆
+                    <strong id="totalCompetitions">0</strong>
+                    <span>Compétitions</span>
+                </div>
+
+                <div>
+                    ⭐
+                    <strong id="totalScore">0</strong>
+                    <span>Points</span>
+                </div>
+
+                <div>
+                    ✅
+                    <strong id="totalCorrect">0</strong>
+                    <span>Bonnes réponses</span>
+                </div>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <span>🏆</span>
+                    <h2>Compétition active</h2>
+                    <p id="activeCompetition">
+                        Aucune compétition en cours.
+                    </p>
+                    <a href="competitions.html">
+                        Voir les compétitions →
+                    </a>
+                </div>
+
+                <div class="card">
+                    <span>📊</span>
+                    <h2>Mes performances</h2>
+                    <p>
+                        Consulte tes statistiques et ton évolution.
+                    </p>
+                    <a href="performances.html">
+                        Voir mes performances →
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="records">
+
+                <h2>🥇 Mes records</h2>
+
+                <div>
+                    <span>⚡ Réponse la plus rapide</span>
+                    <strong id="recordFastest">—</strong>
+                </div>
+
+                <div>
+                    <span>🎯 Plus de bonnes réponses</span>
+                    <strong id="recordCorrect">—</strong>
+                </div>
+
+                <div>
+                    <span>⭐ Meilleur score</span>
+                    <strong id="recordScore">—</strong>
+                </div>
+
+                <div>
+                    <span>🔥 Meilleure série</span>
+                    <strong id="recordStreak">—</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
