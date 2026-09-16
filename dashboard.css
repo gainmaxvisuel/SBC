@@ -1,0 +1,318 @@
+:root{
+    --primary:#635bff;
+    --primary-dark:#5048e8;
+    --dark:#11121a;
+    --text:#292b3a;
+    --muted:#77798a;
+    --light:#f7f8fc;
+    --border:#e5e6ee;
+    --white:#fff;
+    --green:#16a34a;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:var(--light);
+    color:var(--text);
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* MENU */
+
+#sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:250px;
+    height:100vh;
+    background:white;
+    border-right:1px solid var(--border);
+    padding:25px 18px;
+    z-index:1000;
+    transform:translateX(-100%);
+    transition:.25s;
+}
+
+#sidebar.open{
+    transform:translateX(0);
+}
+
+.menu-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+.menu-header img{
+    width:125px;
+    max-height:45px;
+    object-fit:contain;
+}
+
+#closeMenu{
+    border:0;
+    background:none;
+    font-size:22px;
+    color:#777;
+    cursor:pointer;
+}
+
+nav{
+    display:grid;
+    gap:7px;
+}
+
+nav a,
+nav button{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    width:100%;
+    padding:12px 13px;
+    border:0;
+    border-radius:10px;
+    background:none;
+    color:var(--muted);
+    font-size:13px;
+    text-align:left;
+    cursor:pointer;
+}
+
+nav a:hover,
+nav button:hover,
+nav a.active{
+    background:#f0efff;
+    color:var(--primary);
+}
+
+nav hr{
+    border:0;
+    border-top:1px solid var(--border);
+    margin:12px 0;
+}
+
+/* CONTENU */
+
+main{
+    min-height:100vh;
+}
+
+header{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    background:white;
+    border-bottom:1px solid var(--border);
+}
+
+#openMenu{
+    border:0;
+    background:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.mobile-logo{
+    display:none;
+    width:100px;
+}
+
+.user{
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    width:min(1150px,90%);
+    margin:auto;
+    padding:45px 0;
+}
+
+.welcome{
+    background:linear-gradient(135deg,#5148e8,#7460f4);
+    color:white;
+    padding:32px;
+    border-radius:18px;
+    margin-bottom:25px;
+}
+
+.welcome span{
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.welcome h1{
+    margin:12px 0 8px;
+    font-size:32px;
+}
+
+.welcome p{
+    color:#e5e3ff;
+    font-size:13px;
+}
+
+.welcome small{
+    display:block;
+    margin-top:20px;
+    color:#ddd9ff;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-bottom:25px;
+}
+
+.stats div{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px;
+}
+
+.stats strong{
+    display:block;
+    margin:12px 0 4px;
+    font-size:25px;
+    color:var(--dark);
+}
+
+.stats span{
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.card,
+.records{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:25px;
+}
+
+.card>span{
+    font-size:24px;
+}
+
+.card h2{
+    margin:12px 0 8px;
+    font-size:18px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.card a{
+    color:var(--primary);
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* RECORDS */
+
+.records h2{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.records>div{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 0;
+    border-bottom:1px solid var(--border);
+    font-size:12px;
+}
+
+.records>div:last-child{
+    border-bottom:0;
+}
+
+.records strong{
+    color:var(--primary);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    header{
+        padding:0 18px;
+    }
+
+    .mobile-logo{
+        display:block;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard{
+        width:92%;
+        padding:30px 0;
+    }
+
+    .welcome{
+        padding:25px;
+    }
+
+    .welcome h1{
+        font-size:27px;
+    }
+}
+
+@media(max-width:480px){
+
+    .stats{
+        gap:10px;
+    }
+
+    .stats div{
+        padding:16px;
+    }
+
+    .stats strong{
+        font-size:21px;
+    }
+
+    .user{
+        display:none;
+    }
+      }
