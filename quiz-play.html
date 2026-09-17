@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Afriquiz — Quiz</title>
+
+    <link rel="stylesheet" href="quiz-play.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="quiz-play.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="quiz.html" class="back">← Quiz</a>
+
+        <div class="logo">Afriquiz</div>
+
+        <div class="user">
+            <span id="username">Utilisateur</span>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="quiz-container">
+
+            <div class="quiz-top">
+
+                <div>
+                    <span class="label">QUIZ</span>
+                    <h1 id="quizTitle">Chargement...</h1>
+                </div>
+
+                <div class="timer" id="timer">
+                    30s
+                </div>
+
+            </div>
+
+
+            <div class="progress-area">
+
+                <div class="progress-info">
+                    <span id="questionNumber">
+                        Question 1 / 10
+                    </span>
+
+                    <span id="score">
+                        0 point
+                    </span>
+                </div>
+
+                <div class="progress">
+                    <div id="progressBar"></div>
+                </div>
+
+            </div>
+
+
+            <div id="quizContent">
+
+                <div class="loading">
+                    Chargement de la question...
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
