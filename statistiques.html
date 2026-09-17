@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afriquiz — Statistiques</title><link rel="stylesheet" href="statistiques.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="statistiques.js" defer></script>
+
+</head><body><aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+        <div class="brand">Afriquiz</div>
+        <button id="closeMenu" class="close-menu">×</button>
+    </div><nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="competitions.html">Compétitions</a>
+    <a href="statistiques.html" class="active">Statistiques</a>
+    <a href="#">Transactions</a>
+    <a href="#">Records</a>
+    <a href="#">Communauté</a>
+</nav>
+
+<button id="logoutBtn" class="logout">Déconnexion</button>
+
+</aside><div class="overlay" id="overlay"></div><header class="header">
+    <button id="openMenu" class="menu-btn">☰</button><div class="header-title">
+    <span>Statistiques</span>
+</div>
+
+<div class="header-user">
+    <span id="username">Utilisateur</span>
+</div>
+
+</header><main class="main"><section class="page-heading">
+    <div>
+        <span class="eyebrow">PERFORMANCES</span>
+        <h1>Mes statistiques</h1>
+        <p>Suivez vos performances sur Afriquiz.</p>
+    </div>
+</section>
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-icon">Q</div>
+        <div>
+            <span>Quiz participés</span>
+            <strong id="totalQuizzes">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">R</div>
+        <div>
+            <span>Réponses</span>
+            <strong id="totalAnswers">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">✓</div>
+        <div>
+            <span>Bonnes réponses</span>
+            <strong id="correctAnswers">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">%</div>
+        <div>
+            <span>Précision</span>
+            <strong id="accuracy">0%</strong>
+        </div>
+    </div>
+
+</section>
+
+<section class="performance-grid">
+
+    <div class="panel">
+        <div class="panel-header">
+            <h2>Performance</h2>
+        </div>
+
+        <div class="performance-list">
+
+            <div class="performance-row">
+                <span>Total de points</span>
+                <strong id="totalPoints">0</strong>
+            </div>
+
+            <div class="performance-row">
+                <span>Meilleur score</span>
+                <strong id="bestScore">0</strong>
+            </div>
+
+            <div class="performance-row">
+                <span>Meilleure série</span>
+                <strong id="bestStreak">0</strong>
+            </div>
+
+            <div class="performance-row">
+                <span>Réponse la plus rapide</span>
+                <strong id="fastestAnswer">—</strong>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-header">
+            <h2>Temps de réponse</h2>
+        </div>
+
+        <div class="time-box">
+            <strong id="totalTime">0 s</strong>
+            <span>Temps total passé à répondre</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="panel recent-panel">
+
+    <div class="panel-header">
+        <div>
+            <h2>Activité récente</h2>
+            <p>Vos dernières participations.</p>
+        </div>
+    </div>
+
+    <div id="recentList" class="recent-list">
+        <div class="loading">Chargement...</div>
+    </div>
+
+</section>
+
+</main></body>
+</html>
