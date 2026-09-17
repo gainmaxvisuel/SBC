@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Afriquiz — Quiz</title>
+
+    <link rel="stylesheet" href="quiz.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="quiz.js" defer></script>
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <aside id="sidebar">
+
+        <div class="menu-header">
+            <img src="logo.png" alt="Afriquiz">
+
+            <button id="closeMenu">✕</button>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">🏠 Accueil</a>
+            <a href="quiz.html" class="active">🎯 Quiz</a>
+            <a href="competitions.html">🏆 Compétitions</a>
+            <a href="performances.html">📊 Mes performances</a>
+            <a href="records.html">🥇 Mes records</a>
+            <a href="participations.html">📋 Mes participations</a>
+            <a href="profil.html">👤 Mon profil</a>
+
+            <hr>
+
+            <a href="parametres.html">⚙️ Paramètres</a>
+            <button id="logoutBtn">🚪 Déconnexion</button>
+        </nav>
+
+    </aside>
+
+
+    <!-- CONTENU -->
+    <main>
+
+        <header>
+
+            <button id="openMenu">☰</button>
+
+            <img src="logo.png" alt="Afriquiz" class="mobile-logo">
+
+            <div class="user">
+                👤 <span id="topUsername">...</span>
+            </div>
+
+        </header>
+
+
+        <section class="quiz-page">
+
+            <div class="page-header">
+
+                <div>
+                    <span class="section-label">AFRIQUIZ</span>
+
+                    <h1>Quiz</h1>
+
+                    <p>
+                        Teste tes connaissances et améliore tes performances.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- FILTRES -->
+            <div class="filters">
+
+                <button class="filter active" data-filter="all">
+                    Tous
+                </button>
+
+                <button class="filter" data-filter="free">
+                    Gratuits
+                </button>
+
+                <button class="filter" data-filter="paid">
+                    Payants
+                </button>
+
+            </div>
+
+
+            <!-- QUIZ -->
+            <div id="quizList" class="quiz-grid">
+
+                <div class="loading">
+                    Chargement des quiz...
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
