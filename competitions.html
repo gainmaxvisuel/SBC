@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Afriquiz — Compétitions</title>
+
+    <link rel="stylesheet" href="competitions.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="competitions.js" defer></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside id="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-logo">
+                Afriquiz
+            </div>
+
+            <button id="closeMenu" class="close-menu">
+                ×
+            </button>
+
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Accueil
+            </a>
+
+            <a href="quiz.html">
+                <span>?</span>
+                Quiz
+            </a>
+
+            <a href="competitions.html" class="active">
+                <span>♜</span>
+                Compétitions
+            </a>
+
+            <a href="#">
+                <span>▣</span>
+                Statistiques
+            </a>
+
+            <a href="#">
+                <span>↔</span>
+                Transactions
+            </a>
+
+            <a href="#">
+                <span>◎</span>
+                Records
+            </a>
+
+            <a href="#">
+                <span>◉</span>
+                Communauté
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn" class="logout">
+            Déconnexion
+        </button>
+
+    </aside>
+
+
+    <!-- CONTENU -->
+
+    <div class="page">
+
+        <header>
+
+            <button id="openMenu" class="menu-button">
+                ☰
+            </button>
+
+            <div class="header-logo">
+                Afriquiz
+            </div>
+
+            <div class="header-user" id="username">
+                Utilisateur
+            </div>
+
+        </header>
+
+
+        <main>
+
+            <section class="page-heading">
+
+                <div>
+                    <span class="eyebrow">
+                        AFriquiz
+                    </span>
+
+                    <h1>
+                        Compétitions
+                    </h1>
+
+                    <p>
+                        Participe aux compétitions
+                        et mesure-toi aux autres joueurs.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- FILTRES -->
+
+            <div class="filters">
+
+                <button
+                    class="filter active"
+                    data-filter="all">
+                    Toutes
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="free">
+                    Gratuites
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="paid">
+                    Payantes
+                </button>
+
+            </div>
+
+
+            <!-- COMPÉTITIONS -->
+
+            <section id="competitionsGrid"
+                     class="competitions-grid">
+
+                <div class="loading">
+                    Chargement des compétitions...
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <div id="overlay"></div>
+
+</body>
+</html>
